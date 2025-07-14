@@ -1,6 +1,12 @@
 # Baptist Catechism Web Application
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://patrickseamars.github.io/baptist-catechisms/)
+
 A web-based application for studying the Baptist Catechism with 145 questions, optimized for printing and interactive learning.
+
+## 🌐 Live Application
+
+**Try it now:** [https://patrickseamars.github.io/baptist-catechisms/](https://patrickseamars.github.io/baptist-catechisms/)
 
 ## Features
 
