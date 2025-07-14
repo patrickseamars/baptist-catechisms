@@ -1,0 +1,786 @@
+/* Reset and Base Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Georgia", "Times New Roman", serif;
+	line-height: 1.6;
+	color: #333;
+	background-color: #f9f9f9;
+}
+
+.container {
+	max-width: 8.5in;
+	margin: 0 auto;
+	background: white;
+	min-height: 100vh;
+}
+
+/* Navigation Styles */
+.navigation {
+	background: #2c3e50;
+	color: white;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.navigation button {
+	background: #3498db;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.navigation button:hover {
+	background: #2980b9;
+}
+
+.navigation button:disabled {
+	background: #7f8c8d;
+	cursor: not-allowed;
+}
+
+.nav-actions {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.print-btn {
+	background: #27ae60 !important;
+}
+
+.print-btn:hover {
+	background: #219a52 !important;
+}
+
+.multi-print-btn {
+	background: #9b59b6 !important;
+}
+
+.multi-print-btn:hover {
+	background: #8e44ad !important;
+}
+
+.print-options {
+	display: flex;
+	align-items: center;
+	margin-top: 0.5rem;
+}
+
+.checkbox-label {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.checkbox-label span {
+	user-select: none;
+}
+
+#questionSelect {
+	padding: 0.5rem;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	max-width: 200px;
+}
+
+#questionCounter {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* Question Page Styles */
+.question-page {
+	padding: 2rem;
+	page-break-after: always;
+}
+
+.section-header {
+	text-align: center;
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 3px solid #2c3e50;
+}
+
+.section-header h1 {
+	font-size: 2.5rem;
+	color: #2c3e50;
+	font-weight: bold;
+}
+
+.question-title {
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.question-title h2 {
+	font-size: 1.8rem;
+	color: #34495e;
+	padding: 1rem;
+	background: #ecf0f1;
+	border-radius: 8px;
+}
+
+.qa-section {
+	margin-bottom: 2rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+}
+
+.question-text,
+.answer-text {
+	padding: 1.5rem;
+	border-radius: 8px;
+}
+
+.question-text {
+	background: #e8f4f8;
+	border-left: 4px solid #3498db;
+}
+
+.answer-text {
+	background: #e8f6f3;
+	border-left: 4px solid #27ae60;
+}
+
+.question-text h3 {
+	color: #2980b9;
+	margin-bottom: 0.5rem;
+}
+
+.answer-text h3 {
+	color: #27ae60;
+	margin-bottom: 0.5rem;
+}
+
+.question-text p,
+.answer-text p {
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+/* Content Sections */
+.verses-section,
+.application-section,
+.prayer-section,
+.activities-section {
+	margin-bottom: 2rem;
+}
+
+.verses-section h3,
+.application-section h3,
+.prayer-section h3,
+.activities-section h3 {
+	color: #2c3e50;
+	margin-bottom: 1rem;
+	font-size: 1.3rem;
+	border-bottom: 2px solid #ecf0f1;
+	padding-bottom: 0.5rem;
+}
+
+.verses-section ul {
+	list-style: none;
+	padding: 0;
+}
+
+.verses-section li {
+	background: #fef9e7;
+	margin-bottom: 0.5rem;
+	padding: 0.8rem;
+	border-left: 4px solid #f39c12;
+	border-radius: 4px;
+	font-weight: 500;
+}
+
+.editable-content {
+	background: #fdfdfd;
+	border: 2px dashed #ddd;
+	border-radius: 8px;
+	padding: 1.5rem;
+	min-height: 100px;
+	cursor: text;
+	transition: border-color 0.3s;
+	min-height: 300px;
+}
+
+.editable-content:hover {
+	border-color: #bdc3c7;
+}
+
+.editable-content:focus {
+	outline: none;
+	border-color: #3498db;
+	border-style: solid;
+}
+
+.editable-content em {
+	color: #7f8c8d;
+}
+
+/* Coloring Page Styles */
+.coloring-page {
+	padding: 2rem;
+	page-break-before: always;
+}
+
+.coloring-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.coloring-header h2 {
+	font-size: 2rem;
+	color: #2c3e50;
+	margin-bottom: 0.5rem;
+}
+
+.coloring-header p {
+	font-size: 1.2rem;
+	color: #7f8c8d;
+}
+
+.coloring-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 8in;
+}
+
+.coloring-placeholder {
+	border: 2px dashed #bdc3c7;
+	border-radius: 8px;
+	padding: 3rem;
+	text-align: center;
+	background: #fafafa;
+	width: 100%;
+	max-width: 6in;
+}
+
+.coloring-placeholder p {
+	color: #7f8c8d;
+	font-size: 1.1rem;
+	margin-bottom: 1rem;
+}
+
+.coloring-image {
+	max-width: 100%;
+	max-height: 7in;
+	border-radius: 8px;
+}
+
+/* Print Styles */
+@media print {
+	@page {
+		size: A4;
+		margin: 0.5in;
+	}
+
+	body {
+		background: white;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		margin: 0;
+		padding: 0;
+	}
+
+	.container {
+		max-width: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.no-print {
+		display: none !important;
+	}
+
+	/* Ensure exactly 2 pages per question */
+	.question-page {
+		page-break-after: always;
+		margin: 0;
+		padding: 0.3in;
+		height: 100vh;
+		max-height: 100vh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+	}
+
+	.coloring-page {
+		page-break-before: always;
+		page-break-after: always;
+		margin: 0;
+		padding: 0.3in;
+		height: 100vh;
+		max-height: 100vh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+	}
+
+	/* Fixed sizes for header sections */
+	.section-header {
+		flex-shrink: 0;
+		margin-bottom: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	.section-header h1 {
+		font-size: 1.5rem;
+		margin: 0;
+	}
+
+	.question-title {
+		flex-shrink: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	.question-title h2 {
+		font-size: 1.2rem;
+		padding: 0.3rem;
+		margin: 0;
+	}
+
+	/* Flexible content area */
+	.question-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		gap: 0.3rem;
+	}
+
+	.qa-section {
+		grid-template-columns: 1fr;
+		gap: 0.3rem;
+		margin-bottom: 0.3rem;
+		flex-shrink: 0;
+	}
+
+	.question-text,
+	.answer-text {
+		padding: 0.2rem;
+		margin: 0;
+	}
+
+	.question-text p,
+	.answer-text p {
+		font-size: 0.9rem;
+		margin: 0;
+	}
+
+	/* Verses section with overflow control */
+	.verses-section {
+		margin-bottom: 0.3rem;
+		flex-shrink: 0;
+		max-height: 3in;
+		overflow: hidden;
+	}
+
+	.verses-section h3 {
+		font-size: 1rem;
+		margin-bottom: 0.2rem;
+	}
+
+	.verses-section ul {
+		max-height: 2.5in;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+	.verses-section li {
+		padding: 0.2rem;
+		margin-bottom: 0.2rem;
+		font-size: 0.85rem;
+		line-height: 1.2;
+	}
+
+	/* Note sections with flexible sizing */
+	.application-section,
+	.prayer-section,
+	.activities-section,
+	.songs-section {
+		flex: 1;
+		margin-bottom: 0.3rem;
+		min-height: 0.8in;
+		max-height: 1.5in;
+		overflow: hidden;
+	}
+
+	.application-section h3,
+	.prayer-section h3,
+	.activities-section h3,
+	.songs-section h3 {
+		font-size: 0.9rem;
+		margin-bottom: 0.2rem;
+		padding-bottom: 0.1rem;
+	}
+
+	.editable-content {
+		border: 1px solid #ddd;
+		border-style: solid;
+		padding: 0.2rem;
+		min-height: 0.6in;
+		max-height: 1.2in;
+		overflow: hidden;
+		font-size: 0.8rem;
+		line-height: 1.2;
+	}
+
+	/* Coloring page content */
+	.coloring-header {
+		flex-shrink: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	.coloring-header h2 {
+		font-size: 1.3rem;
+		margin: 0;
+	}
+
+	.coloring-header p {
+		font-size: 1rem;
+		margin: 0;
+	}
+
+	.coloring-content {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.coloring-placeholder {
+		border: 1px solid #bdc3c7;
+		width: 100%;
+		height: 100%;
+		max-height: 8in;
+		max-width: 6in;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5rem;
+		box-sizing: border-box;
+	}
+
+	.coloring-image {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
+
+	/* Prevent page breaks within sections */
+	section {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+
+	/* Force page breaks between question and coloring pages */
+	.question-page + .coloring-page {
+		page-break-before: always;
+	}
+
+	/* Ensure no extra pages */
+	.question-page:last-child {
+		page-break-after: avoid;
+	}
+
+	.coloring-page:last-child {
+		page-break-after: avoid;
+	}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.navigation {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.nav-actions {
+		justify-content: center;
+	}
+
+	.qa-section {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.question-page {
+		padding: 1rem;
+	}
+
+	.coloring-page {
+		padding: 1rem;
+	}
+
+	.section-header h1 {
+		font-size: 2rem;
+	}
+
+	.question-title h2 {
+		font-size: 1.5rem;
+	}
+}
+
+/* Additional utility classes */
+.text-center {
+	text-align: center;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Hide coloring page when checkbox is unchecked */
+.coloring-page.no-print {
+	display: none !important;
+}
+
+/* Modal Styles */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	animation: fadeIn 0.3s;
+}
+
+.modal-content {
+	background-color: white;
+	margin: 5% auto;
+	padding: 0;
+	border-radius: 8px;
+	width: 90%;
+	max-width: 600px;
+	max-height: 80vh;
+	overflow-y: auto;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+	background: #2c3e50;
+	color: white;
+	border-radius: 8px 8px 0 0;
+}
+
+.modal-header h2 {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.close {
+	font-size: 2rem;
+	cursor: pointer;
+	color: white;
+	transition: color 0.3s;
+}
+
+.close:hover {
+	color: #ecf0f1;
+}
+
+.modal-body {
+	padding: 2rem;
+}
+
+.modal-body p {
+	margin-bottom: 1.5rem;
+	color: #555;
+}
+
+.range-selection {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.range-inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.range-inputs label {
+	font-weight: bold;
+	color: #2c3e50;
+}
+
+.range-inputs select {
+	padding: 0.75rem;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	transition: border-color 0.3s;
+}
+
+.range-inputs select:focus {
+	outline: none;
+	border-color: #3498db;
+}
+
+.print-options {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	background: #f8f9fa;
+	border-radius: 6px;
+}
+
+.modal-body .checkbox-label {
+	color: #333;
+	font-size: 1rem;
+}
+
+.quick-selections {
+	margin-bottom: 1rem;
+}
+
+.quick-selections h4 {
+	margin-bottom: 1rem;
+	color: #2c3e50;
+	font-size: 1.1rem;
+}
+
+.section-btn {
+	display: block;
+	width: 100%;
+	padding: 0.75rem;
+	margin-bottom: 0.5rem;
+	background: #ecf0f1;
+	border: 2px solid #bdc3c7;
+	border-radius: 4px;
+	color: #2c3e50;
+	cursor: pointer;
+	font-size: 0.9rem;
+	transition: all 0.3s;
+}
+
+.section-btn:hover {
+	background: #d5dbdb;
+	border-color: #95a5a6;
+}
+
+.section-btn.all-btn {
+	background: #3498db;
+	color: white;
+	border-color: #2980b9;
+}
+
+.section-btn.all-btn:hover {
+	background: #2980b9;
+	border-color: #1f618d;
+}
+
+.modal-footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: 1rem;
+	padding: 1.5rem;
+	background: #f8f9fa;
+	border-radius: 0 0 8px 8px;
+}
+
+.cancel-btn {
+	padding: 0.75rem 1.5rem;
+	background: #95a5a6;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+	background: #7f8c8d;
+}
+
+.generate-btn {
+	padding: 0.75rem 1.5rem;
+	background: #27ae60;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: background-color 0.3s;
+}
+
+.generate-btn:hover {
+	background: #219a52;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Modal responsive design */
+@media (max-width: 768px) {
+	.modal-content {
+		width: 95%;
+		margin: 10% auto;
+	}
+
+	.range-selection {
+		grid-template-columns: 1fr;
+	}
+
+	.modal-body {
+		padding: 1rem;
+	}
+
+	.modal-footer {
+		flex-direction: column;
+	}
+
+	.cancel-btn,
+	.generate-btn {
+		width: 100%;
+	}
+}

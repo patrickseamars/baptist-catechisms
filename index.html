@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Baptist Catechism</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<!-- Navigation -->
+			<nav class="navigation no-print">
+				<button id="prevBtn" onclick="previousQuestion()" disabled>
+					← Previous
+				</button>
+				<span id="questionCounter">Question 1 of 145</span>
+				<button id="nextBtn" onclick="nextQuestion()">Next →</button>
+				<div class="nav-actions">
+					<button onclick="printQuestion()" class="print-btn">🖨️ Print Current</button>
+					<button onclick="showMultiPrintModal()" class="multi-print-btn">📄 Multi-Print</button>
+					<select id="questionSelect" onchange="goToQuestion(this.value)">
+						<!-- Options will be populated by JavaScript -->
+					</select>
+				</div>
+			</nav>
+
+			<!-- Question Content Page -->
+			<div class="question-page" id="questionPage">
+				<!-- Section Header -->
+				<div class="section-header">
+					<h1 id="sectionTitle">God, Man, and Sin</h1>
+				</div>
+
+				<!-- Question Title -->
+				<div class="question-title">
+					<h2 id="questionTitle">Question 1: Who made you?</h2>
+				</div>
+
+				<!-- Question and Answer -->
+				<section class="qa-section">
+					<div class="question-text">
+						<h3>Question:</h3>
+						<p id="questionText">Who made you?</p>
+					</div>
+					<div class="answer-text">
+						<h3>Answer:</h3>
+						<p id="answerText">God made me.</p>
+					</div>
+				</section>
+
+				<!-- Bible Verses -->
+				<section class="verses-section">
+					<h3>Bible Verses:</h3>
+					<ul id="versesList">
+						<!-- Verses will be populated by JavaScript -->
+					</ul>
+				</section>
+
+				<!-- Application -->
+				<section class="application-section">
+					<h3>Application:</h3>
+					<div id="applicationText" class="editable-content">
+						<p><em>Add application ideas...</em></p>
+					</div>
+				</section>
+
+				<!-- Prayer -->
+				<section class="prayer-section">
+					<h3>Prayer:</h3>
+					<div id="prayerText" class="editable-content">
+						<p><em>Add prayer ideas...</em></p>
+					</div>
+				</section>
+
+				<!-- Activities -->
+				<section class="activities-section">
+					<h3>Activities:</h3>
+					<div id="activitiesText" class="editable-content">
+						<p><em>Add activity ideas...</em></p>
+					</div>
+				</section>
+
+				<!-- Songs -->
+				<section class="songs-section">
+					<h3>Songs:</h3>
+					<div id="songText" class="editable-content">
+						<p><em>Add songs that align...</em></p>
+					</div>
+				</section>
+			</div>
+
+			<!-- Coloring Page -->
+			<div class="coloring-page" id="coloringPage">
+				<div class="coloring-header">
+					<h2 id="coloringTitle">Coloring Page</h2>
+					<p id="coloringQuestion">Question 1: Who made you?</p>
+				</div>
+				<div class="coloring-content">
+					<div id="coloringImage" class="coloring-placeholder">
+						<p>Coloring page image will be displayed here</p>
+						<p><em>You can add images by updating the JSON file</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Multi-Print Modal -->
+		<div id="multiPrintModal" class="modal no-print" style="display: none;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2>📄 Multi-Print Questions</h2>
+					<span class="close" onclick="closeMultiPrintModal()">&times;</span>
+				</div>
+				<div class="modal-body">
+					<p>Select the range of questions you want to print:</p>
+					
+					<div class="range-selection">
+						<div class="range-inputs">
+							<label for="startQuestion">From Question:</label>
+							<select id="startQuestion">
+								<!-- Options will be populated by JavaScript -->
+							</select>
+						</div>
+						<div class="range-inputs">
+							<label for="endQuestion">To Question:</label>
+							<select id="endQuestion">
+								<!-- Options will be populated by JavaScript -->
+							</select>
+						</div>
+					</div>
+
+					<div class="print-options">
+						<label class="checkbox-label">
+							<input type="checkbox" id="includeColoringPages" checked>
+							<span>Include Coloring Pages</span>
+						</label>
+						<label class="checkbox-label">
+							<input type="checkbox" id="includePersonalNotes" checked>
+							<span>Include Personal Notes</span>
+						</label>
+					</div>
+
+					<div class="quick-selections">
+						<h4>Quick Selections:</h4>
+						<button onclick="selectSection('God, Man, and Sin')" class="section-btn">God, Man, and Sin (1-33)</button>
+						<button onclick="selectSection('The Ten Commandments')" class="section-btn">Ten Commandments (34-67)</button>
+						<button onclick="selectSection('Redemption')" class="section-btn">Redemption (68-106)</button>
+						<button onclick="selectSection('Prayer')" class="section-btn">Prayer (107-123)</button>
+						<button onclick="selectSection('The Word, The Church, and The Ordinances')" class="section-btn">Church & Ordinances (124-136)</button>
+						<button onclick="selectSection('The Last Things')" class="section-btn">The Last Things (137-145)</button>
+						<button onclick="selectAllQuestions()" class="section-btn all-btn">All Questions (1-145)</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button onclick="closeMultiPrintModal()" class="cancel-btn">Cancel</button>
+					<button onclick="generateMultiPrint()" class="generate-btn">🖨️ Generate Print View</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
